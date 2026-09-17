@@ -57,7 +57,7 @@ All paths below are relative to repository root; these are planned paths, not pr
 | tests/fixtures/ | small purpose-built Olist-shaped CSVs, explicitly synthetic |
 | tests/integration/ | protocol, SQL, lifecycle and provider-adapter tests |
 | tests/e2e/ | actual browser query/pin/restart/refresh flows |
-| docs/ | metric dictionary, source/license ledger, demo script, validation evidence |
+| docs/ | metric dictionary, source/license ledger, validation evidence |
 | compose.yaml, Dockerfile, .env.example | reproducible runtime |
 | pnpm-workspace.yaml, package.json, pnpm-lock.yaml | commands and dependencies |
 

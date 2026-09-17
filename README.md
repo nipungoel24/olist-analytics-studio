@@ -190,8 +190,7 @@ olist-analytics-studio/
 
 ## Dataset
 
-The Olist Brazilian E-Commerce dataset is downloaded automatically on first `docker compose up` from Kaggle (anonymous HTTP, no credentials required). It contains 9 CSV files covering orders, customers, items, payments, reviews, products, sellers, and geolocation data across 2016–2018.
+The **Brazilian E-Commerce Public Dataset by Olist** is downloaded automatically on first `docker compose up` from Kaggle (anonymous HTTP, no credentials required). It contains 9 CSV files covering orders, customers, items, payments, reviews, products, sellers, and geolocation data across 2016–2018.
 
-## License
-
-MIT
+- **Source**: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+- **License**: CC BY-NC-SA 4.0

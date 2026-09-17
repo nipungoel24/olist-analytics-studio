@@ -1,7 +1,10 @@
 # Source & License Manifest
 
-## Project License
-MIT
+## Dataset
+
+**Brazilian E-Commerce Public Dataset by Olist**
+Source: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+License: CC BY-NC-SA 4.0
 
 ## Key Dependencies and Licenses
 
@@ -33,4 +36,3 @@ MIT
 
 ## Database
 - PostgreSQL 16: PostgreSQL License (similar to MIT)
-- Olist dataset: Public domain (CC0)

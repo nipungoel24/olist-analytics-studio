@@ -175,7 +175,7 @@ Created 2026-09-06 (Phase 0). Every row traces to PRD.md, Architecture.md, or Ph
 | R7 | Chart ambiguity with selection saved to pin, invalid chart JSON, multiple units, zero score bins | P3 |
 | R8 | API/database restart, concurrent refresh, failed import, incomplete refresh preserving snapshot | P5 |
 
-## Phase 7 — Final Validation
+## Final Validation
 
 | Requirement | Test | Evidence |
 |-------------|------|----------|
@@ -183,11 +183,5 @@ Created 2026-09-06 (Phase 0). Every row traces to PRD.md, Architecture.md, or Ph
 | No secrets | Security audit | 6/6 pass |
 | Pin persistence | Pin lifecycle verification | 7 stages verified |
 | Q1-Q10 criteria | Acceptance matrix | 10/10 pass |
-| README exists | README.md | Created (200 lines) |
-| Demo video | artifacts/submission/olist-analytics-demo.webm | Recorded (5.1 MB, 4:30) |
-| Fallback demo | ActualMode=fallback visible | PASS — supported query with chart |
-| Unsupported demo | Unsupported question | PASS — no chart, clear message |
-| Partial demo | Controlled tool failure | PASS — review_analysis failed, category_performance preserved |
-| Demo script | docs/demo-script.md | Updated with actual timestamps |
 | Source manifest | docs/evidence/source-manifest.md | Created |
-| Evidence index | docs/evidence/README.md | Updated with video evidence |
+| Evidence index | docs/evidence/README.md | Created |
