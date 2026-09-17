@@ -1,0 +1,20 @@
+{
+  "name": "olist-analytics-blueprint",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "dev:api": "pnpm --filter @olist/api dev",
+    "dev:mcp": "pnpm --filter @olist/mcp dev",
+    "dev:web": "pnpm --filter @olist/web dev",
+    "dev": "pnpm --filter @olist/api dev"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@11.22.0"
+}

@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Local Inter Font — Design.md: "no runtime Google Fonts dependency"
+   ============================================================ */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Inter-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
+}
+
+/* ============================================================
+   Design Tokens — Olist Analytics Studio
+   Source: Design.md § Theme tokens
+   ============================================================ */
+
+@theme {
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F1F5F9;
+  --color-foreground: #0F172A;
+  --color-muted-foreground: #475569;
+  --color-border: #CBD5E1;
+  --color-primary: #0F766E;
+  --color-primary-hover: #115E59;
+  --color-primary-foreground: #FFFFFF;
+  --color-focus: #1D4ED8;
+  --color-success: #166534;
+  --color-warning: #92400E;
+  --color-destructive: #B91C1C;
+
+  /* Chart series palette */
+  --color-chart-1: #0F766E;
+  --color-chart-2: #2563EB;
+  --color-chart-3: #B45309;
+  --color-chart-4: #7C3AED;
+  --color-chart-5: #BE123C;
+
+  /* Typography scale */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --text-page-title: 1.5rem;     /* 24px */
+  --leading-page-title: 2rem;    /* 32px */
+  --text-result-title: 1.125rem; /* 18px */
+  --leading-result-title: 1.625rem; /* 26px */
+  --text-section: 0.875rem;      /* 14px */
+  --leading-section: 1.25rem;    /* 20px */
+  --text-body: 0.875rem;         /* 14px */
+  --leading-body: 1.375rem;      /* 22px */
+  --text-metadata: 0.75rem;      /* 12px */
+  --leading-metadata: 1.125rem;  /* 18px */
+  --text-table: 0.8125rem;       /* 13px */
+  --leading-table: 1.25rem;      /* 20px */
+
+  /* Spacing */
+  --spacing-1: 0.25rem;  /* 4px */
+  --spacing-2: 0.5rem;   /* 8px */
+  --spacing-3: 0.75rem;  /* 12px */
+  --spacing-4: 1rem;     /* 16px */
+  --spacing-6: 1.5rem;   /* 24px */
+  --spacing-8: 2rem;     /* 32px */
+
+  /* Radii */
+  --radius-card: 0.75rem;    /* 12px */
+  --radius-control: 0.5rem;  /* 8px */
+
+  /* Z-index scale */
+  --z-nav: 10;
+  --z-dropdown: 20;
+  --z-dialog: 30;
+  --z-toast: 40;
+}
+
+/* ============================================================
+   Base styles
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+}
+
+/* ============================================================
+   Focus ring
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   Scrollbar
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+/* ============================================================
+   Tabular numerals for data displays
+   ============================================================ */
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   Chart.js overrides
+   ============================================================ */
+
+canvas {
+  max-width: 100%;
+}
