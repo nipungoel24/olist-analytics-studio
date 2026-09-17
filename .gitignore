@@ -40,3 +40,9 @@ playwright-report/
 tmp/
 temp/
 *.tmp
+
+# Artifacts
+artifacts/
+
+# Debug
+apps/mcp/stderr.txt

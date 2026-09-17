@@ -1,17 +1,17 @@
 # Olist Analytics Studio
 
-![TypeScript](https://img.shields.io/badge/TypeScript-7.0-blue)
-![Tests](https://img.shields.io/badge/tests-365%20passing-brightgreen)
-![Docker](https://img.shields.io/badge/Docker-ready-blue)
+[![TypeScript](https://img.shields.io/badge/TypeScript-7.0-blue)](https://www.typescriptlang.org/)
+[![Tests](https://img.shields.io/badge/tests-365%20passing-brightgreen)](#testing)
+[![Docker](https://img.shields.io/badge/Docker-ready-blue)](https://docs.docker.com/)
 
-Local e-commerce analytics workspace where analysts ask plain-English questions, get Chart.js charts with one-sentence insights, and pin results to a persistent dashboard.
+A local e-commerce analytics workspace where analysts ask plain-English questions, get Chart.js visualizations with one-sentence insights, and pin results to a persistent dashboard.
 
 ## Quick Start
 
 ```bash
 # Clone and start everything
-git clone <repo-url>
-cd olist-analytics-blueprint
+git clone https://github.com/nipungoel24/olist-analytics-studio.git
+cd olist-analytics-studio
 cp .env.example .env
 docker compose up --build
 ```
@@ -21,7 +21,7 @@ The stack starts at **http://localhost:3000**. First run downloads the Olist Bra
 ## Architecture
 
 ```
-Browser ──► Fastify API (port 3000) ──► ILLMAgent ──► MCP Client ──► MCP Server ──► PostgreSQL
+Browser ──► Fastify API (port 3000) ──► LLM Agent ──► MCP Client ──► MCP Server ──► PostgreSQL
                 │                                              │
                 ├─► Static React assets                       ├─► 7 analytics SQL tools
                 └─► Pin/Analysis persistence                  └─► Read-only queries
@@ -69,8 +69,6 @@ The MCP server exposes **7 validated SQL tools** through the official Model Cont
 - **Dashboard** — Persistent pin grid with refresh lifecycle (idle → refreshing → unchanged/changed/not_comparable)
 - **LLM Chat** — Ask questions in natural language; mode switches between native tool calling and deterministic fallback
 - **Provider Switching** — `AGENT_MODE=llm` for Claude native tool calling, `AGENT_MODE=fallback` for keyword routing
-- **Q7 Rerank** — Dynamic fan-out: top 5 categories are re-ranked fresh on each execution, not frozen IDs
-- **Chart Options** — Ambiguous visualizations present two validated choices; pin stores the selection
 
 ## API Endpoints
 
@@ -105,7 +103,7 @@ pnpm test
 
 **Total: 365 tests across 35 files.**
 
-## Run Services Individually
+## Development
 
 ```bash
 # Frontend (dev server, port 5173)
@@ -152,7 +150,7 @@ Copy `.env.example` to `.env` and customize:
 ## Project Structure
 
 ```
-olist-analytics-blueprint/
+olist-analytics-studio/
 ├── apps/
 │   ├── web/                    # React 19 + Vite + TypeScript frontend
 │   │   ├── src/
@@ -165,7 +163,7 @@ olist-analytics-blueprint/
 │   │   └── src/
 │   │       ├── server.ts       # Fastify lifecycle
 │   │       ├── routes/         # health, analyses, pins
-│   │       ├── agents/         # ILLMAgent, native, fallback
+│   │       ├── agents/         # LLM agent, native, fallback
 │   │       ├── analysis/       # normalization, merge, charts, diff
 │   │       ├── mcp/            # client, child process manager
 │   │       └── repositories/   # analyses, pins, refresh persistence
@@ -181,14 +179,13 @@ olist-analytics-blueprint/
 │   ├── integration/            # Protocol, SQL, lifecycle tests
 │   └── vitest.config.ts
 ├── migrations/                 # SQL schema migrations
-├── docs/                       # Metric dictionary, demo scripts
+├── docs/                       # Requirements matrix, evidence
 ├── compose.yaml                # Docker Compose stack
 ├── Dockerfile                  # Multi-stage: ingest, api
 ├── .env.example                # Configuration template
 ├── PRD.md                      # Product requirements
 ├── Architecture.md             # System design
-├── Design.md                   # UI tokens and guidelines
-└── Rules.md                    # Implementation constraints
+└── Design.md                   # UI tokens and guidelines
 ```
 
 ## Dataset
