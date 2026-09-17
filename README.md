@@ -61,7 +61,7 @@ The MCP server exposes **7 validated SQL tools** through the official Model Cont
 | `seller_performance` | Revenue, order count, review proxy, delivery duration, location by seller |
 | `review_analysis` | Score/category/month/seller/state distributions, counts, means, response intervals |
 | `payment_breakdown` | Payment type/installments/month breakdowns with value and line counts |
-| `geographic_analysis` | Delivery performance by customer/seller state, route analysis, delay metrics |
+| `delivery_performance` | Delivery duration, delay, on-time rate, and state/seller/month comparisons |
 
 ## Frontend Features
 
